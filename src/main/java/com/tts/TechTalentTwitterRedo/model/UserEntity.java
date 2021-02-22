@@ -1,6 +1,6 @@
 package com.tts.TechTalentTwitterRedo.model;
 
-import com.vaadin.flow.templatemodel.AllowClientUpdates;
+//import com.vaadin.flow.templatemodel.AllowClientUpdates;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +30,7 @@ public class UserEntity {
     @Column(name = "user_id")
     private Long id;
 
-    //    private String email;
+//    private String email;
 //    private String username;
 //    private String password;
 //    private String firstName;

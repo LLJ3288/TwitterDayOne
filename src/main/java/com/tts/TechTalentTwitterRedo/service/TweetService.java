@@ -1,6 +1,7 @@
 package com.tts.TechTalentTwitterRedo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.tts.TechTalentTwitterRedo.model.TweetEntity;
 import com.tts.TechTalentTwitterRedo.model.UserEntity;
@@ -20,17 +21,27 @@ public class TweetService {
         return tweets;
     }
 
-    public List<TweetEntity> findAllByUser(UserEntity userEntity) {
-        List<TweetEntity> tweets = tweetRepo.findAllByUserOrderByCreatedAtDesc(userEntity);
+    public List<TweetEntity> findAllByUser(UserEntity user) {
+        List<TweetEntity> tweets = tweetRepo.findAllByUserOrderByCreatedAtDesc(user);
         return tweets;
     }
 
-    public List<TweetEntity> findAllByUsers(List<UserEntity> users){
+    public List<TweetEntity> findAllByUsers(List<UserEntity> users) {
         List<TweetEntity> tweets = tweetRepo.findAllByUserInOrderByCreatedAtDesc(users);
         return tweets;
+
     }
 
-    public void save(TweetEntity tweetEntity) {
-        tweetRepo.save(tweetEntity);
+    public void save(TweetEntity tweet) {
+        tweetRepo.save(tweet);
     }
+
+
+
+    public Optional<TweetEntity> findById(Long Id) {
+        return tweetRepo.findById(Id);
+    }
+
 }
+
+

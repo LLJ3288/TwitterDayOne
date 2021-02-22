@@ -42,7 +42,7 @@ public class TweetController {
     public String submitTweetForm(@Valid TweetEntity tweet, BindingResult bindingResult, Model model) {
         UserEntity userEntity = userService.getLoggedInUser();
         if (!bindingResult.hasErrors()) {
-            tweet.setUserEntity(userEntity);
+            tweet.setUser(userEntity);
             tweetService.save(tweet);
             model.addAttribute("successMessage", "Tweet successfully created!");
             model.addAttribute("tweet", new TweetEntity());
