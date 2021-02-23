@@ -50,6 +50,9 @@ public class UserService {
     }
 
 
+
+
+
     public UserEntity saveNewUser(UserEntity userEntity) {
         userEntity.setPassword(bCryptPasswordEncoder.encode(userEntity.getPassword()));
         userEntity.setActive(1);
